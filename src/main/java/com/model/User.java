@@ -2,9 +2,9 @@ package com.model;
 
 public class User {
 
-    private String email;
-    private String password;
-    private String name;
+     public String email;
+     public String password;
+     public String name;
 
     public String getEmail() {
         return email;

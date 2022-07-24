@@ -1,64 +1,99 @@
 package com.PageObject;
 
-
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 public class MainPage {
 
-    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
+    // log in to account button
+    @FindBy(how = How.CSS,using = ".button_button__33qZ0")
+    private SelenideElement logInButton;
 
-        //локатор кнопки Личный Кабинет
-        @FindBy(how = How.CLASS_NAME,using = "AppHeader_header__link__3D_hX")
-        private SelenideElement personalAccount;
+    // main page logo "Соберите бургер"
+    @FindBy(how = How.XPATH,using = "//h1[text()='Соберите бургер']")
+    private SelenideElement setUpBurgerTitle;
 
-        //локатор кнопки Войти в аккаунт
-        @FindBy(how = How.CLASS_NAME,using = "button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg")
-        private SelenideElement enterInPersonalAccount;
+    // personal account button
+    @FindBy(how = How.CSS,using = ".AppHeader_header__link__3D_hX:nth-child(3) .AppHeader_header__linkText__3q_va")
+    private SelenideElement personalAccountButton;
 
-        //локатор кнопки Конструктор
-        @FindBy(how = How.CLASS_NAME,using = "AppHeader_header__linkText__3q_va ml-2")
-        private SelenideElement constructorButton;
+    // tab Булки
+    @FindBy(how = How.CSS,using = ".tab_tab__1SPyG:nth-child(1)")
+    private SelenideElement bunsTab;
 
-        //локатор логотипа Stellar Burgers
-        @FindBy(how = How.XPATH,using = "//*[@id=\"root\"]/div/header/nav/div/a/svg")
-        private SelenideElement linkStellarBurgers;
+    // title Булки
+    @FindBy(how = How.CSS,using = ".text_type_main-medium:nth-child(1)")
+    private SelenideElement bunsTitle;
 
-        //локатор кнопки выбора списка булок
-        @FindBy(how = How.XPATH, using = ".//span [contains(text(),'Булки')]")
-        private SelenideElement bunButton;
+    // tab Соусы
+    @FindBy(how = How.CSS,using = ".tab_tab__1SPyG:nth-child(2)")
+    private SelenideElement sauceTab;
 
-        //локатор кнопки выбора списка соусов
-        @FindBy(how = How.XPATH, using = ".//span [contains(text(),'Соусы')]")
-        private SelenideElement sauceButton;
+    // title Соус
+    @FindBy(how = How.CSS,using = ".text:nth-child(3)")
+    private SelenideElement sauceTitle;
 
-        //локатор кнопки выбора списка начинок
-        @FindBy(how = How.XPATH, using = ".//span [contains(text(),'Начинки')]")
-        private SelenideElement staffButton;
+    // tab Начинки
+    @FindBy(how = How.CSS,using = ".tab_tab__1SPyG:nth-child(3)")
+    private SelenideElement toppingsTab;
 
+    // title Начинки
+    @FindBy(how = How.CSS,using = ".text:nth-child(5)")
+    private SelenideElement toppingsTitle;
 
-
-    public MainPage() {
+    // click buns tab
+    public void clickBunsTab() {
+        bunsTab.click();
     }
 
-        //метод кнопки Личный Кабинет
-        public void clickPersonalAccount() {
-            personalAccount.click();
-        }
-        //метод кнопки Войти в аккаунт
-        public void clickEnterInPersonalAccount() {
-            enterInPersonalAccount.click();
-        }
-        //метод кнопки Конструктор
-        public void clickConstructorButton() {
-            constructorButton.click();
-        }
-
-        //метод логотипа Stellar Burgers
-        public void clickLinkStellarBurgers() {
-            linkStellarBurgers.click();
-        }
-
-
+    // if the Булки title visible
+    public boolean ifBunsTitleVisible() {
+        if (bunsTitle.isDisplayed());
+        return true;
     }
+
+    // click sauce tab
+    public void clickSauceTab() {
+        sauceTab.click();
+    }
+
+    // if the Соусы title visible
+    public boolean ifSauceTitleVisible() {
+        if (sauceTitle.isDisplayed());
+        return true;
+    }
+
+    // if the Начинки title visible
+    public boolean ifToppingsTitleVisible() {
+        if (toppingsTitle.isDisplayed());
+        return true;
+    }
+
+    // click Начинки tab
+    public void clickToppingsTab() {
+        toppingsTab.click();
+    }
+
+    // click personal account button
+    public void clickPersonalAccountButton() {
+        personalAccountButton.shouldBe(Condition.exist).click();
+    }
+
+    // scroll to "Соберите бургер" title
+    public void scroolToSetUpBurgerTitle() {
+        setUpBurgerTitle.scrollTo().shouldBe(Condition.visible);
+    }
+
+    // returns true if title "Соберите бургер" is displayed
+    public boolean isSetUpBurgerTitleDisplayed() {
+        return setUpBurgerTitle.shouldBe(Condition.visible).isDisplayed();
+    }
+
+    // clicks Войти в аккаунт button
+    public void clickLogInToAccountButton() {
+        logInButton.shouldBe(Condition.exist).click();
+    }
+
+}
