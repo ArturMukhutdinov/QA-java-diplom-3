@@ -8,7 +8,7 @@ import org.openqa.selenium.support.How;
 public class PersonalAccountPage {
 
     // button Выйти
-    @FindBy(how = How.CSS,using = ".Account_button__14Yp3")
+    @FindBy(how = How.XPATH, using = ".//button[text()='Выход']")
     public SelenideElement exitButton;
 
     // button Конструктор
@@ -20,7 +20,7 @@ public class PersonalAccountPage {
     public SelenideElement headerLogo;
 
     // button Профиль
-    @FindBy(how = How.XPATH,using = "//a[text()='Профиль']")
+    @FindBy(how = How.XPATH, using = ".//*[@class='Account_text__fZAIn text text_type_main-default']")
     public SelenideElement profileButton;
 
     public boolean isProfileButtonDisplayed() {

@@ -4,12 +4,11 @@ import com.codeborne.selenide.*;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.webdriver;
 import static org.junit.Assert.assertEquals;
-import com.codeborne.selenide.Selenide;
-import org.junit.Before;
 
 public class CreateUserTest {
 
@@ -18,7 +17,7 @@ public class CreateUserTest {
     public static final String signUpURL = "https://stellarburgers.nomoreparties.site/register";
     String name = RandomStringUtils.randomAlphabetic(10);
     String email = RandomStringUtils.randomAlphabetic(10) + EMAIL_POSTFIX;
-    String password = "alien6";
+    String password = "alert6";
     String shortPassword = "12345";
     String sevenSymbolsPassword = "1234567";
     String expectedInvalidPassErrorMessage = "Некорректный пароль";

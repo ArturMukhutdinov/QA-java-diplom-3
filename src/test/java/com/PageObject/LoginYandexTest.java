@@ -44,7 +44,7 @@ public class LoginYandexTest {
         LoginPage loginPage = Selenide.page(LoginPage.class);
         loginPage.logIn(responseData.get("email"),responseData.get("password"));
 
-        mainPage.scroolToSetUpBurgerTitle();
+        mainPage.scrollToSetUpBurgerTitle();
         boolean setUpBurgerTitle = mainPage.isSetUpBurgerTitleDisplayed();
         mainPage.clickPersonalAccountButton();
 
@@ -64,7 +64,7 @@ public class LoginYandexTest {
         LoginPage loginPage = Selenide.page(LoginPage.class);
         loginPage.logIn(responseData.get("email"),responseData.get("password"));
 
-        mainPage.scroolToSetUpBurgerTitle();
+        mainPage.scrollToSetUpBurgerTitle();
         boolean setUpBurgerTitle = mainPage.isSetUpBurgerTitleDisplayed();
         mainPage.clickPersonalAccountButton();
 
@@ -86,7 +86,7 @@ public class LoginYandexTest {
         loginPage.logIn(responseData.get("email"),responseData.get("password"));
 
         MainPage mainPage = Selenide.page(MainPage.class);
-        mainPage.scroolToSetUpBurgerTitle();
+        mainPage.scrollToSetUpBurgerTitle();
         boolean setUpBurgerTitle = mainPage.isSetUpBurgerTitleDisplayed();
         mainPage.clickPersonalAccountButton();
 
@@ -110,7 +110,7 @@ public class LoginYandexTest {
         loginPage.logIn(responseData.get("email"),responseData.get("password"));
 
         MainPage mainPage = Selenide.page(MainPage.class);
-        mainPage.scroolToSetUpBurgerTitle();
+        mainPage.scrollToSetUpBurgerTitle();
         boolean setUpBurgerTitle = mainPage.isSetUpBurgerTitleDisplayed();
         mainPage.clickPersonalAccountButton();
 

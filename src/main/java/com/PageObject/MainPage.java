@@ -12,7 +12,7 @@ public class MainPage {
     private SelenideElement logInButton;
 
     // main page logo "Соберите бургер"
-    @FindBy(how = How.XPATH,using = "//h1[text()='Соберите бургер']")
+    @FindBy(how = How.XPATH, using = ".//h1[text()='Соберите бургер']")
     private SelenideElement setUpBurgerTitle;
 
     // personal account button
@@ -50,7 +50,7 @@ public class MainPage {
 
     // if the Булки title visible
     public boolean ifBunsTitleVisible() {
-        if (bunsTitle.isDisplayed());
+        if(bunsTitle.isDisplayed());
         return true;
     }
 
@@ -82,7 +82,7 @@ public class MainPage {
     }
 
     // scroll to "Соберите бургер" title
-    public void scroolToSetUpBurgerTitle() {
+    public void scrollToSetUpBurgerTitle() {
         setUpBurgerTitle.scrollTo().shouldBe(Condition.visible);
     }
 
